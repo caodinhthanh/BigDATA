@@ -1,0 +1,96 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "00000000000000000005",
+  "position": {
+    "x": 24,
+    "y": 422,
+    "z": 5000,
+    "height": 274,
+    "width": 606,
+    "tabOrder": 5000
+  },
+  "visual": {
+    "visualType": "clusteredColumnChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Thời gian chơi"
+                    }
+                  },
+                  "Property": "Nhóm thời gian"
+                }
+              },
+              "queryRef": "Thời gian chơi.Nhóm thời gian",
+              "nativeQueryRef": "Nhóm thời gian",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Thời gian chơi"
+                    }
+                  },
+                  "Property": "Tỷ lệ đề xuất · Thời gian chơi"
+                }
+              },
+              "queryRef": "Thời gian chơi.Tỷ lệ đề xuất · Thời gian chơi",
+              "nativeQueryRef": "Tỷ lệ đề xuất · Thời gian chơi",
+              "active": true
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Thời gian chơi"
+                  }
+                },
+                "Property": "Nhóm thời gian"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Tỷ lệ đề xuất theo thời gian chơi'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

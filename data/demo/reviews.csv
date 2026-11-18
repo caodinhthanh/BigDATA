@@ -1,0 +1,8 @@
+appid,steamid,voted_up,playtime_at_review,num_reviews,unix_timestamp_created,review
+570,101,True,30,1,1640995200,"A short review, with a comma."
+570,102,False,120,8,1641081600,"First line
+Second line with ""quotes""."
+570,103,True,420,12,1643673600,Enjoyed it
+730,104,True,720,40,1643760000,Good
+730,105,False,,2,1643846400,No playtime recorded
+730,106,True,0,,1643932800,Zero is a known value

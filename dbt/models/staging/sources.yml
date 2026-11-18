@@ -1,0 +1,11 @@
+version: 2
+sources:
+  - name: warehouse
+    schema: "{{ 'raw_demo' if target.name == 'demo' else 'raw' }}"
+    tables:
+      - name: review_aggregates
+        columns:
+          - name: app_id
+            data_tests: [not_null]
+          - name: review_month
+            data_tests: [not_null]

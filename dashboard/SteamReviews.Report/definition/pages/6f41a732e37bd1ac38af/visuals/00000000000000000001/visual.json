@@ -1,0 +1,60 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "name": "00000000000000000001",
+  "position": {
+    "x": 24,
+    "y": 20,
+    "z": 1000,
+    "width": 395,
+    "height": 100,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Xu hướng"
+                    }
+                  },
+                  "Property": "Số review · Xu hướng"
+                }
+              },
+              "queryRef": "Xu hướng.Số review · Xu hướng",
+              "nativeQueryRef": "Số review · Xu hướng",
+              "active": true
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Tổng số review'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

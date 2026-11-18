@@ -1,0 +1,96 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "00000000000000000004",
+  "position": {
+    "x": 24,
+    "y": 138,
+    "z": 4000,
+    "height": 266,
+    "width": 1232,
+    "tabOrder": 4000
+  },
+  "visual": {
+    "visualType": "lineChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Xu hướng"
+                    }
+                  },
+                  "Property": "Tháng"
+                }
+              },
+              "queryRef": "Xu hướng.Tháng",
+              "nativeQueryRef": "Tháng",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Xu hướng"
+                    }
+                  },
+                  "Property": "Tỷ lệ đề xuất · Xu hướng"
+                }
+              },
+              "queryRef": "Xu hướng.Tỷ lệ đề xuất · Xu hướng",
+              "nativeQueryRef": "Tỷ lệ đề xuất · Xu hướng",
+              "active": true
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Xu hướng"
+                  }
+                },
+                "Property": "Tháng"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Tỷ lệ đề xuất theo tháng'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,8 @@
+FROM golang:1.24-bookworm
+WORKDIR /src
+ADD https://codeload.github.com/minio/minio/tar.gz/refs/tags/RELEASE.2025-10-15T17-29-55Z /tmp/minio.tar.gz
+RUN tar -xzf /tmp/minio.tar.gz --strip-components=1 && CGO_ENABLED=0 go build -trimpath -ldflags='-s -w' -o /out/minio .
+FROM alpine:3.22
+RUN apk add --no-cache ca-certificates
+COPY --from=0 /out/minio /usr/local/bin/minio
+ENTRYPOINT ["/usr/local/bin/minio"]

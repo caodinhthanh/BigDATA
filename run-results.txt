@@ -1,0 +1,5 @@
+Full dataset run from D:\BigDATA
+steam_02_lake_to_warehouse|success|ingest__d552fc438738e0a1d3fa|60
+steam_01_ingest_to_lake|success|local_fb56e8a74b1b424cb545ab8712649192|614
+1620607|15437471|13424286|86.96
+airflow-scheduler-1  | [0m17:44:07  Done. PASS=7 WARN=0 ERROR=0 SKIP=0 NO-OP=0 REUSED=0 TOTAL=7

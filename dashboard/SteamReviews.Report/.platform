@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "SteamReviews"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "8d1c6e26-0ece-454c-ae09-3a4ab429a98f"
+  }
+}

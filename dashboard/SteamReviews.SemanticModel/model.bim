@@ -1,0 +1,1421 @@
+{
+  "compatibilityLevel": 1606,
+  "model": {
+    "annotations": [
+      {
+        "name": "PBI_QueryOrder",
+        "value": "[\"Xu hướng\",\"Thời gian chơi\",\"Hoạt động\"]"
+      },
+      {
+        "name": "__PBI_TimeIntelligenceEnabled",
+        "value": "1"
+      },
+      {
+        "name": "PBI_ProTooling",
+        "value": "[\"DevMode\"]"
+      }
+    ],
+    "culture": "vi-VN",
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "discourageImplicitMeasures": true,
+    "relationships": [
+      {
+        "name": "965f907e-ff13-41ed-a10a-390d0b08c9ab",
+        "fromColumn": "Tháng",
+        "fromTable": "Xu hướng",
+        "joinOnDateBehavior": "datePartOnly",
+        "toColumn": "Date",
+        "toTable": "LocalDateTable_1a68ae07-c1c7-49c8-bbb5-4fd17888765b"
+      },
+      {
+        "name": "d2da9148-4890-4f8e-8c54-55107b3c4c2e",
+        "fromColumn": "review_month",
+        "fromTable": "Thời gian chơi",
+        "joinOnDateBehavior": "datePartOnly",
+        "toColumn": "Date",
+        "toTable": "LocalDateTable_2250898c-d125-48b1-877e-1281c1fec77d"
+      },
+      {
+        "name": "0a352c22-53d7-4452-ba58-279c5b68794d",
+        "fromColumn": "review_month",
+        "fromTable": "Hoạt động",
+        "joinOnDateBehavior": "datePartOnly",
+        "toColumn": "Date",
+        "toTable": "LocalDateTable_0475893f-0218-4ac5-9201-bbd40ef7b8f9"
+      }
+    ],
+    "sourceQueryCulture": "vi-VN",
+    "tables": [
+      {
+        "name": "Xu hướng",
+        "columns": [
+          {
+            "name": "Tháng",
+            "annotations": [
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "yyyy-MM",
+            "lineageTag": "8c2c6e34-4088-4fec-af7f-1e55dbe73271",
+            "sourceColumn": "review_month",
+            "summarizeBy": "none",
+            "variations": [
+              {
+                "name": "Variation",
+                "defaultHierarchy": {
+                  "hierarchy": "Phân cấp ngày tháng",
+                  "table": "LocalDateTable_1a68ae07-c1c7-49c8-bbb5-4fd17888765b"
+                },
+                "isDefault": true,
+                "relationship": "965f907e-ff13-41ed-a10a-390d0b08c9ab"
+              }
+            ]
+          },
+          {
+            "name": "Mã game",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "lineageTag": "029d535f-4790-45ac-bb18-672e63266718",
+            "sourceColumn": "app_id",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "reviews",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "isHidden": true,
+            "lineageTag": "c73c4610-f82e-4c46-a5b0-f064e9197bb6",
+            "sourceColumn": "reviews",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "recommendations",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "isHidden": true,
+            "lineageTag": "3dc1fe50-77c3-4135-bb03-45bbef849fd2",
+            "sourceColumn": "recommendations",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "known_playtime",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "isHidden": true,
+            "lineageTag": "abc6c585-fbdf-417c-b99d-f7b05030d883",
+            "sourceColumn": "known_playtime",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "total_playtime_minutes",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "double",
+            "isHidden": true,
+            "lineageTag": "d1fc525e-412b-4ec1-bb1c-cecbcbb6a38b",
+            "sourceColumn": "total_playtime_minutes",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "recommendation_rate",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "94fb86a3-7fed-49a7-8926-517937182aa5",
+            "sourceColumn": "recommendation_rate",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "avg_playtime_hours",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "c4eccd30-d711-43a7-a4b4-14c9ba51c242",
+            "sourceColumn": "avg_playtime_hours",
+            "summarizeBy": "sum"
+          }
+        ],
+        "lineageTag": "4bf66ef9-9e6d-4d4a-a621-6de633d55abe",
+        "measures": [
+          {
+            "name": "Tỷ lệ đề xuất · Xu hướng",
+            "expression": "DIVIDE(SUM('Xu hướng'[recommendations]), SUM('Xu hướng'[reviews]))",
+            "formatString": "0.0%",
+            "lineageTag": "b42e80dd-f258-43dd-8ab0-b2c51a0508b5"
+          },
+          {
+            "name": "Số review · Xu hướng",
+            "expression": "SUM('Xu hướng'[reviews])",
+            "formatString": "#,##0",
+            "lineageTag": "1fd98365-97df-485e-bc38-d01ed878f4a9"
+          },
+          {
+            "name": "Giờ chơi TB · Xu hướng",
+            "expression": "DIVIDE(SUM('Xu hướng'[total_playtime_minutes]), 60 * SUM('Xu hướng'[known_playtime]))",
+            "formatString": "0.0",
+            "lineageTag": "cc6e00c4-dfc7-4bce-b416-828e065837c2"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "recommendation_trend",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = PostgreSQL.Database(\"localhost:5433\", \"steam_reviews\"),",
+                "    Data = Source{[Schema=\"analytics\", Item=\"recommendation_trend\"]}[Data]",
+                "in",
+                "    Data"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Thời gian chơi",
+        "columns": [
+          {
+            "name": "Nhóm thời gian",
+            "dataType": "string",
+            "lineageTag": "512fb03a-d3b1-468a-a1a1-f92020796983",
+            "sourceColumn": "playtime_band",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Mã game",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "lineageTag": "78934cd8-81d1-4976-801d-9a170ea18d54",
+            "sourceColumn": "app_id",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "reviews",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "isHidden": true,
+            "lineageTag": "3770f4cc-d3ba-4479-bdc6-8a8518a24366",
+            "sourceColumn": "reviews",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "recommendations",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "isHidden": true,
+            "lineageTag": "21337de9-91fa-489b-a3d7-7635545f4be4",
+            "sourceColumn": "recommendations",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "known_playtime",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "isHidden": true,
+            "lineageTag": "11b12e0d-ea68-4c36-9d92-9d88984cc960",
+            "sourceColumn": "known_playtime",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "total_playtime_minutes",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "double",
+            "isHidden": true,
+            "lineageTag": "b296bde8-1e3a-4297-90de-e39134b5f8d4",
+            "sourceColumn": "total_playtime_minutes",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "review_month",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "83bd50f4-2e4b-4a5d-b1c6-48b4eb5dc89d",
+            "sourceColumn": "review_month",
+            "summarizeBy": "none",
+            "variations": [
+              {
+                "name": "Variation",
+                "defaultHierarchy": {
+                  "hierarchy": "Phân cấp ngày tháng",
+                  "table": "LocalDateTable_2250898c-d125-48b1-877e-1281c1fec77d"
+                },
+                "isDefault": true,
+                "relationship": "d2da9148-4890-4f8e-8c54-55107b3c4c2e"
+              }
+            ]
+          },
+          {
+            "name": "recommendation_rate",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "978acf74-7d93-4a13-9da2-47eb0aaefb5e",
+            "sourceColumn": "recommendation_rate",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "avg_playtime_hours",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "846bfa04-64aa-4210-83f7-d07633c84c12",
+            "sourceColumn": "avg_playtime_hours",
+            "summarizeBy": "sum"
+          }
+        ],
+        "lineageTag": "3399b4f2-a602-42d8-9cb4-9fded9eef535",
+        "measures": [
+          {
+            "name": "Tỷ lệ đề xuất · Thời gian chơi",
+            "expression": "DIVIDE(SUM('Thời gian chơi'[recommendations]), SUM('Thời gian chơi'[reviews]))",
+            "formatString": "0.0%",
+            "lineageTag": "9400c3fc-5bea-4176-af7e-91c81d3a292d"
+          },
+          {
+            "name": "Số review · Thời gian chơi",
+            "expression": "SUM('Thời gian chơi'[reviews])",
+            "formatString": "#,##0",
+            "lineageTag": "fbbee492-0289-476d-925b-c1c2debc060c"
+          },
+          {
+            "name": "Giờ chơi TB · Thời gian chơi",
+            "expression": "DIVIDE(SUM('Thời gian chơi'[total_playtime_minutes]), 60 * SUM('Thời gian chơi'[known_playtime]))",
+            "formatString": "0.0",
+            "lineageTag": "4f0e49fb-07e0-422d-864c-664015e7031d"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "playtime_behavior",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = PostgreSQL.Database(\"localhost:5433\", \"steam_reviews\"),",
+                "    Data = Source{[Schema=\"analytics\", Item=\"playtime_behavior\"]}[Data]",
+                "in",
+                "    Data"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Hoạt động",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Nhóm hoạt động",
+            "dataType": "string",
+            "lineageTag": "87e52660-ca3b-4412-aa9a-1c32dd062c4d",
+            "sourceColumn": "activity_band",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Mã game",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "lineageTag": "ebc5ee37-5f10-4693-9409-b6e3ff8799d2",
+            "sourceColumn": "app_id",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "reviews",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "isHidden": true,
+            "lineageTag": "6e049bfd-2877-4fbd-8885-31e702278ea2",
+            "sourceColumn": "reviews",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "recommendations",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "isHidden": true,
+            "lineageTag": "443e257f-19ed-4b1f-87f5-3dfd3e94aa4f",
+            "sourceColumn": "recommendations",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "known_playtime",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "isHidden": true,
+            "lineageTag": "8b96f89d-073f-4029-9497-9d70ec509fcc",
+            "sourceColumn": "known_playtime",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "total_playtime_minutes",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "double",
+            "isHidden": true,
+            "lineageTag": "0753bc11-6f27-4713-9d3f-c3859d4d2805",
+            "sourceColumn": "total_playtime_minutes",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "review_month",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "7b0e97c1-bad7-4145-9fb5-becd26d291e5",
+            "sourceColumn": "review_month",
+            "summarizeBy": "none",
+            "variations": [
+              {
+                "name": "Variation",
+                "defaultHierarchy": {
+                  "hierarchy": "Phân cấp ngày tháng",
+                  "table": "LocalDateTable_0475893f-0218-4ac5-9201-bbd40ef7b8f9"
+                },
+                "isDefault": true,
+                "relationship": "0a352c22-53d7-4452-ba58-279c5b68794d"
+              }
+            ]
+          },
+          {
+            "name": "recommendation_rate",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "10472c3c-4eec-447c-8656-8bd92b906f78",
+            "sourceColumn": "recommendation_rate",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "avg_playtime_hours",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "750047a8-27c5-4ea0-9b30-321a483a42e1",
+            "sourceColumn": "avg_playtime_hours",
+            "summarizeBy": "sum"
+          }
+        ],
+        "lineageTag": "51d90fc9-3f7d-4729-bc69-b6c69f94f5a7",
+        "measures": [
+          {
+            "name": "Tỷ lệ đề xuất · Hoạt động",
+            "expression": "DIVIDE(SUM('Hoạt động'[recommendations]), SUM('Hoạt động'[reviews]))",
+            "formatString": "0.0%",
+            "lineageTag": "922bc38c-fd98-46bd-bb38-2be5798bf575"
+          },
+          {
+            "name": "Số review · Hoạt động",
+            "expression": "SUM('Hoạt động'[reviews])",
+            "formatString": "#,##0",
+            "lineageTag": "b8db7905-12c8-4c72-8ace-086e3ec8adad"
+          },
+          {
+            "name": "Giờ chơi TB · Hoạt động",
+            "expression": "DIVIDE(SUM('Hoạt động'[total_playtime_minutes]), 60 * SUM('Hoạt động'[known_playtime]))",
+            "formatString": "0.0",
+            "lineageTag": "5c232163-1c8a-4475-927f-189f52c3fa58"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "reviewer_activity",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = PostgreSQL.Database(\"localhost:5433\", \"steam_reviews\"),",
+                "    Data = Source{[Schema=\"analytics\", Item=\"reviewer_activity\"]}[Data]",
+                "in",
+                "    Data"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "DateTableTemplate_098500af-c235-44e1-803d-505c2b552636",
+        "annotations": [
+          {
+            "name": "__PBI_TemplateDateTable",
+            "value": "true"
+          },
+          {
+            "name": "DefaultItem",
+            "value": "DateHierarchy"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "PaddedDateTableDates",
+            "dataType": "dateTime",
+            "formatString": "General Date",
+            "isHidden": true,
+            "isNameInferred": true,
+            "lineageTag": "f244f27b-20ea-4520-8f94-9f9b831ad798",
+            "sourceColumn": "[Date]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Năm",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Year"
+              }
+            ],
+            "dataCategory": "Years",
+            "dataType": "int64",
+            "expression": "YEAR([Date])",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "7dd425f8-433d-4b85-b702-68076f9b1e72",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "MonthNo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "MonthNumber"
+              }
+            ],
+            "dataCategory": "MonthOfYear",
+            "dataType": "int64",
+            "expression": "MONTH([Date])",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "d014253f-bff1-4d8e-a9d1-98dc77e4eb80",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Tháng",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Month"
+              }
+            ],
+            "dataCategory": "Months",
+            "dataType": "string",
+            "expression": "FORMAT([Date], \"MMMM\")",
+            "isHidden": true,
+            "lineageTag": "e031e6a0-7a07-4d5b-bda2-9f7ca198a2d5",
+            "sortByColumn": "MonthNo",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "QuarterNo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "QuarterNumber"
+              }
+            ],
+            "dataCategory": "QuarterOfYear",
+            "dataType": "int64",
+            "expression": "INT(([MonthNo] + 2) / 3)",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "fec72c2c-a1b9-4dc1-8de2-5068feaddcca",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Quý",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Quarter"
+              }
+            ],
+            "dataCategory": "Quarters",
+            "dataType": "string",
+            "expression": "\"Quý \" & [QuarterNo]",
+            "isHidden": true,
+            "lineageTag": "064ed3b2-2fa4-43ea-95b3-bd7bace63bbd",
+            "sortByColumn": "QuarterNo",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Ngày",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Day"
+              }
+            ],
+            "dataCategory": "DayOfMonth",
+            "dataType": "int64",
+            "expression": "DAY([Date])",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "089cd9db-57f4-406f-966d-06bbd4fea25f",
+            "summarizeBy": "none",
+            "type": "calculated"
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "Phân cấp ngày tháng",
+            "annotations": [
+              {
+                "name": "TemplateId",
+                "value": "DateHierarchy"
+              }
+            ],
+            "levels": [
+              {
+                "name": "Năm",
+                "column": "Năm",
+                "lineageTag": "fa3fbeae-d625-4395-8f2c-f7aa53829775",
+                "ordinal": 0
+              },
+              {
+                "name": "Quý",
+                "column": "Quý",
+                "lineageTag": "b6f47813-77bd-425b-96a1-403e05ae584a",
+                "ordinal": 1
+              },
+              {
+                "name": "Tháng",
+                "column": "Tháng",
+                "lineageTag": "f6ec1da0-a078-4874-9275-760776113d1d",
+                "ordinal": 2
+              },
+              {
+                "name": "Ngày",
+                "column": "Ngày",
+                "lineageTag": "27f116d4-70a9-46b0-abd9-a2f852acc283",
+                "ordinal": 3
+              }
+            ],
+            "lineageTag": "ad24fb9a-5fcb-4db3-ac08-28d728baf624"
+          }
+        ],
+        "isHidden": true,
+        "isPrivate": true,
+        "lineageTag": "6a458d10-8d72-4ef3-8274-84abee23f190",
+        "partitions": [
+          {
+            "name": "DateTableTemplate_098500af-c235-44e1-803d-505c2b552636",
+            "mode": "import",
+            "source": {
+              "expression": "Calendar(Date(2015,1,1), Date(2015,1,1))",
+              "type": "calculated"
+            }
+          }
+        ]
+      },
+      {
+        "name": "LocalDateTable_1a68ae07-c1c7-49c8-bbb5-4fd17888765b",
+        "annotations": [
+          {
+            "name": "__PBI_LocalDateTable",
+            "value": "true"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "PaddedDateTableDates",
+            "dataType": "dateTime",
+            "formatString": "General Date",
+            "isHidden": true,
+            "isNameInferred": true,
+            "lineageTag": "25f951c6-d05a-4c2b-9c84-cb72a36d6c35",
+            "sourceColumn": "[Date]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Năm",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Year"
+              }
+            ],
+            "dataCategory": "Years",
+            "dataType": "int64",
+            "expression": "YEAR([Date])",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "c40f0799-92d4-4cad-adb5-5515c22fcd9c",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "MonthNo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "MonthNumber"
+              }
+            ],
+            "dataCategory": "MonthOfYear",
+            "dataType": "int64",
+            "expression": "MONTH([Date])",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "f9394eb1-2797-4fee-9798-13a2bc795e5a",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Tháng",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Month"
+              }
+            ],
+            "dataCategory": "Months",
+            "dataType": "string",
+            "expression": "FORMAT([Date], \"MMMM\")",
+            "isHidden": true,
+            "lineageTag": "4554014b-fdae-4c29-b5a3-9d7cf6fe8bca",
+            "sortByColumn": "MonthNo",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "QuarterNo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "QuarterNumber"
+              }
+            ],
+            "dataCategory": "QuarterOfYear",
+            "dataType": "int64",
+            "expression": "INT(([MonthNo] + 2) / 3)",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "fdeb85ee-20d1-4621-ac2f-a3d510311a18",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Quý",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Quarter"
+              }
+            ],
+            "dataCategory": "Quarters",
+            "dataType": "string",
+            "expression": "\"Quý \" & [QuarterNo]",
+            "isHidden": true,
+            "lineageTag": "e0879d96-a4c7-4255-95aa-96ace706f14c",
+            "sortByColumn": "QuarterNo",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Ngày",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Day"
+              }
+            ],
+            "dataCategory": "DayOfMonth",
+            "dataType": "int64",
+            "expression": "DAY([Date])",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "13f62690-cb73-44ff-a4fb-0128a80790b8",
+            "summarizeBy": "none",
+            "type": "calculated"
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "Phân cấp ngày tháng",
+            "annotations": [
+              {
+                "name": "TemplateId",
+                "value": "DateHierarchy"
+              }
+            ],
+            "levels": [
+              {
+                "name": "Năm",
+                "column": "Năm",
+                "lineageTag": "63c2990f-f3af-4e87-9b9d-81c4ac9617aa",
+                "ordinal": 0
+              },
+              {
+                "name": "Quý",
+                "column": "Quý",
+                "lineageTag": "5adfab11-7952-4ade-8c21-28618291d893",
+                "ordinal": 1
+              },
+              {
+                "name": "Tháng",
+                "column": "Tháng",
+                "lineageTag": "736d8829-f11b-4ff4-9aff-b69125f316e3",
+                "ordinal": 2
+              },
+              {
+                "name": "Ngày",
+                "column": "Ngày",
+                "lineageTag": "b3367253-311e-433c-b7e7-cfd391b0692e",
+                "ordinal": 3
+              }
+            ],
+            "lineageTag": "f787376b-68cf-40b8-8a8d-69c84ac28bcd"
+          }
+        ],
+        "isHidden": true,
+        "lineageTag": "c95bb388-bdb4-420d-9d3c-c4dd1a5b3c72",
+        "partitions": [
+          {
+            "name": "LocalDateTable_1a68ae07-c1c7-49c8-bbb5-4fd17888765b",
+            "mode": "import",
+            "source": {
+              "expression": "Calendar(Date(Year(MIN('Xu hướng'[Tháng])), 1, 1), Date(Year(MAX('Xu hướng'[Tháng])), 12, 31))",
+              "type": "calculated"
+            }
+          }
+        ],
+        "showAsVariationsOnly": true
+      },
+      {
+        "name": "LocalDateTable_2250898c-d125-48b1-877e-1281c1fec77d",
+        "annotations": [
+          {
+            "name": "__PBI_LocalDateTable",
+            "value": "true"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "PaddedDateTableDates",
+            "dataType": "dateTime",
+            "formatString": "General Date",
+            "isHidden": true,
+            "isNameInferred": true,
+            "lineageTag": "19bae8dd-db9b-4548-be13-1f0430e13dc1",
+            "sourceColumn": "[Date]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Năm",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Year"
+              }
+            ],
+            "dataCategory": "Years",
+            "dataType": "int64",
+            "expression": "YEAR([Date])",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "60c3ee1b-f91d-4e76-8e00-2d50265f8317",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "MonthNo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "MonthNumber"
+              }
+            ],
+            "dataCategory": "MonthOfYear",
+            "dataType": "int64",
+            "expression": "MONTH([Date])",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "585be1e5-42da-4b1d-ad46-b4e42ecc3c52",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Tháng",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Month"
+              }
+            ],
+            "dataCategory": "Months",
+            "dataType": "string",
+            "expression": "FORMAT([Date], \"MMMM\")",
+            "isHidden": true,
+            "lineageTag": "9e7c5759-f869-448e-88cf-294d49fb8f17",
+            "sortByColumn": "MonthNo",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "QuarterNo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "QuarterNumber"
+              }
+            ],
+            "dataCategory": "QuarterOfYear",
+            "dataType": "int64",
+            "expression": "INT(([MonthNo] + 2) / 3)",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "6d944187-40f6-42c7-9c2f-02f5df0f3a65",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Quý",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Quarter"
+              }
+            ],
+            "dataCategory": "Quarters",
+            "dataType": "string",
+            "expression": "\"Quý \" & [QuarterNo]",
+            "isHidden": true,
+            "lineageTag": "26977a70-82d1-4d70-a17d-9c4df954c0fa",
+            "sortByColumn": "QuarterNo",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Ngày",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Day"
+              }
+            ],
+            "dataCategory": "DayOfMonth",
+            "dataType": "int64",
+            "expression": "DAY([Date])",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "a295965e-c325-46cc-97e7-0c1db6d58622",
+            "summarizeBy": "none",
+            "type": "calculated"
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "Phân cấp ngày tháng",
+            "annotations": [
+              {
+                "name": "TemplateId",
+                "value": "DateHierarchy"
+              }
+            ],
+            "levels": [
+              {
+                "name": "Năm",
+                "column": "Năm",
+                "lineageTag": "7339b8cb-fbc5-4426-a80f-f0fccbca6d47",
+                "ordinal": 0
+              },
+              {
+                "name": "Quý",
+                "column": "Quý",
+                "lineageTag": "ba43a702-dcdc-4b15-8310-2ae9d7756717",
+                "ordinal": 1
+              },
+              {
+                "name": "Tháng",
+                "column": "Tháng",
+                "lineageTag": "7452b4fa-17c0-4de1-b7e6-fbcbc1c9a95b",
+                "ordinal": 2
+              },
+              {
+                "name": "Ngày",
+                "column": "Ngày",
+                "lineageTag": "c001749f-7f09-4140-aac7-0b87ded0f536",
+                "ordinal": 3
+              }
+            ],
+            "lineageTag": "df7727db-ded1-43ec-9d1d-800e5dda6f47"
+          }
+        ],
+        "isHidden": true,
+        "lineageTag": "e9d67564-e39d-4fd2-afd3-6d541bb898c9",
+        "partitions": [
+          {
+            "name": "LocalDateTable_2250898c-d125-48b1-877e-1281c1fec77d",
+            "mode": "import",
+            "source": {
+              "expression": "Calendar(Date(Year(MIN('Thời gian chơi'[review_month])), 1, 1), Date(Year(MAX('Thời gian chơi'[review_month])), 12, 31))",
+              "type": "calculated"
+            }
+          }
+        ],
+        "showAsVariationsOnly": true
+      },
+      {
+        "name": "LocalDateTable_0475893f-0218-4ac5-9201-bbd40ef7b8f9",
+        "annotations": [
+          {
+            "name": "__PBI_LocalDateTable",
+            "value": "true"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "PaddedDateTableDates",
+            "dataType": "dateTime",
+            "formatString": "General Date",
+            "isHidden": true,
+            "isNameInferred": true,
+            "lineageTag": "0ec29ddb-9fbe-4b9f-b4ec-dfbf42fcce45",
+            "sourceColumn": "[Date]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Năm",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Year"
+              }
+            ],
+            "dataCategory": "Years",
+            "dataType": "int64",
+            "expression": "YEAR([Date])",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "1c7e3c8e-c7a2-4977-b08f-10574efacc56",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "MonthNo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "MonthNumber"
+              }
+            ],
+            "dataCategory": "MonthOfYear",
+            "dataType": "int64",
+            "expression": "MONTH([Date])",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "3c792d5a-e028-4821-a514-d01d479ceddd",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Tháng",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Month"
+              }
+            ],
+            "dataCategory": "Months",
+            "dataType": "string",
+            "expression": "FORMAT([Date], \"MMMM\")",
+            "isHidden": true,
+            "lineageTag": "700426f9-ed78-4426-8167-b3b30ea346bc",
+            "sortByColumn": "MonthNo",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "QuarterNo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "QuarterNumber"
+              }
+            ],
+            "dataCategory": "QuarterOfYear",
+            "dataType": "int64",
+            "expression": "INT(([MonthNo] + 2) / 3)",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "79dc0659-763a-4df1-a316-ff4a4562ae0a",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Quý",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Quarter"
+              }
+            ],
+            "dataCategory": "Quarters",
+            "dataType": "string",
+            "expression": "\"Quý \" & [QuarterNo]",
+            "isHidden": true,
+            "lineageTag": "b48415a2-691d-48a6-a1ee-47470ac1fb3a",
+            "sortByColumn": "QuarterNo",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Ngày",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Day"
+              }
+            ],
+            "dataCategory": "DayOfMonth",
+            "dataType": "int64",
+            "expression": "DAY([Date])",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "332c0f9a-6ec8-42be-ac48-fd1871f017c1",
+            "summarizeBy": "none",
+            "type": "calculated"
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "Phân cấp ngày tháng",
+            "annotations": [
+              {
+                "name": "TemplateId",
+                "value": "DateHierarchy"
+              }
+            ],
+            "levels": [
+              {
+                "name": "Năm",
+                "column": "Năm",
+                "lineageTag": "fd474a2a-a3a7-45d0-b3c1-89a476fe5a33",
+                "ordinal": 0
+              },
+              {
+                "name": "Quý",
+                "column": "Quý",
+                "lineageTag": "4c9396fa-c7a6-4cd0-952f-b3963404672f",
+                "ordinal": 1
+              },
+              {
+                "name": "Tháng",
+                "column": "Tháng",
+                "lineageTag": "7948a1b1-325c-4534-9d47-e148bc98ca71",
+                "ordinal": 2
+              },
+              {
+                "name": "Ngày",
+                "column": "Ngày",
+                "lineageTag": "a7214988-b088-4b74-965e-33b07285c844",
+                "ordinal": 3
+              }
+            ],
+            "lineageTag": "be64b029-527f-4c71-bed9-ce5205af9fd3"
+          }
+        ],
+        "isHidden": true,
+        "lineageTag": "5df7eec5-3000-4bd2-a142-52fc24455191",
+        "partitions": [
+          {
+            "name": "LocalDateTable_0475893f-0218-4ac5-9201-bbd40ef7b8f9",
+            "mode": "import",
+            "source": {
+              "expression": "Calendar(Date(Year(MIN('Hoạt động'[review_month])), 1, 1), Date(Year(MAX('Hoạt động'[review_month])), 12, 31))",
+              "type": "calculated"
+            }
+          }
+        ],
+        "showAsVariationsOnly": true
+      }
+    ]
+  }
+}

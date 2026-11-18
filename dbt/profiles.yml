@@ -1,0 +1,15 @@
+steam_reviews:
+  target: local
+  outputs:
+    local: &postgres
+      type: postgres
+      host: "{{ env_var('POSTGRES_HOST') }}"
+      port: "{{ env_var('DBT_POSTGRES_PORT', '5432') | int }}"
+      user: "{{ env_var('POSTGRES_USER') }}"
+      password: "{{ env_var('POSTGRES_PASSWORD') }}"
+      dbname: "{{ env_var('POSTGRES_DB') }}"
+      schema: analytics
+      threads: 2
+    demo:
+      <<: *postgres
+      schema: analytics_demo

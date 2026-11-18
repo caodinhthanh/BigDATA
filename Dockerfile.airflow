@@ -1,0 +1,8 @@
+FROM apache/airflow:2.10.5-python3.11
+USER root
+RUN apt-get update && apt-get install -y --no-install-recommends openjdk-17-jre-headless curl && rm -rf /var/lib/apt/lists/*
+USER airflow
+ARG PYSPARK_ARCHIVE=pyspark==3.5.5
+RUN --mount=type=bind,from=spark_archive,target=/build-cache python -m venv /home/airflow/pipeline-venv && /home/airflow/pipeline-venv/bin/pip install --no-cache-dir "$PYSPARK_ARCHIVE" dbt-postgres==1.9.0 minio==7.2.15 psycopg2-binary==2.9.10
+RUN curl -fsS --retry 3 https://repo.maven.apache.org/maven2/org/apache/hadoop/hadoop-aws/3.3.4/hadoop-aws-3.3.4.jar -o /home/airflow/pipeline-venv/lib/python3.11/site-packages/pyspark/jars/hadoop-aws-3.3.4.jar \
+ && curl -fsS --retry 3 https://repo.maven.apache.org/maven2/com/amazonaws/aws-java-sdk-bundle/1.12.262/aws-java-sdk-bundle-1.12.262.jar -o /home/airflow/pipeline-venv/lib/python3.11/site-packages/pyspark/jars/aws-java-sdk-bundle-1.12.262.jar

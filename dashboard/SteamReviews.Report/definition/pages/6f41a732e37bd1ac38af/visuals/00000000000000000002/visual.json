@@ -1,0 +1,78 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "00000000000000000002",
+  "position": {
+    "x": 442,
+    "y": 20,
+    "z": 2000,
+    "height": 100,
+    "width": 395,
+    "tabOrder": 2000
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Xu hướng"
+                    }
+                  },
+                  "Property": "Tỷ lệ đề xuất · Xu hướng"
+                }
+              },
+              "queryRef": "Xu hướng.Tỷ lệ đề xuất · Xu hướng",
+              "nativeQueryRef": "Tỷ lệ đề xuất · Xu hướng",
+              "active": true
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Tỷ lệ đề xuất'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "dd123cf1769cd6cb178b",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Xu hướng"
+              }
+            },
+            "Property": "Tỷ lệ đề xuất · Xu hướng"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "SteamReviews"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "67abd000-1f75-4b43-9019-a7a81f8420e1"
+  }
+}
